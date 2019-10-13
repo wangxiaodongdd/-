@@ -37,5 +37,13 @@ class DateUtilTest {
 		System.out.println(sdf.format(date));
 	
 	}
+	@Test
+	void testgetAge() {
+		
+		Date date = new Date();
+		
+		int i = DateUtil.getAge(date);
+		System.out.println(i);
+	}
 
 }

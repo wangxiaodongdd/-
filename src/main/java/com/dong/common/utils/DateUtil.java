@@ -53,4 +53,28 @@ public class DateUtil {
 		return c.getTime();
 		
 	}
+	public static int getAge(Date birthday) {
+		//获取当前日期
+		Calendar c=Calendar.getInstance();
+		//获取年月日
+		int yearNow=c.get(Calendar.YEAR);
+		int monthNow=c.get(Calendar.MONTH);
+		int dateNow=c.get(Calendar.DAY_OF_MONTH);
+		//用生日初始化日期
+		c.setTime(birthday);
+	
+		int yearBirth=c.get(Calendar.YEAR);
+		int monthBirth=c.get(Calendar.MONTH);
+		int dateBirth=c.get(Calendar.DAY_OF_MONTH);
+		//-----------
+		int age=yearNow-yearBirth;
+		
+		if (monthBirth>monthNow) {
+			age--;
+		}
+		if (monthBirth==monthNow&&dateBirth>dateNow) {
+			age--;
+		}
+		return age;
+	}
 }
